@@ -1,0 +1,82 @@
+GIT
+  remote: https://github.com/AlexWayfer/twitch-chat.git
+  revision: 4ebcf5dfc47b6085fd77789c268f50d18aac728e
+  branch: v0.0.2
+  specs:
+    twitch-chat (0.0.2)
+
+GIT
+  remote: https://github.com/mauricew/ruby-twitch-api
+  revision: fce26d6ab527521ed0cd30762e4071c8df6e3e10
+  specs:
+    twitch-api (0.4.0)
+      faraday (~> 1.0)
+      faraday_middleware (~> 1.0)
+      twitch_oauth2 (~> 0.3.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    bigdecimal (1.4.2)
+    coinrpc (1.0.1)
+      http (>= 4.4, < 5.1)
+      oj (>= 3.10, < 4.0)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
+    faraday (1.4.2)
+      faraday-em_http (~> 1.0)
+      faraday-em_synchrony (~> 1.0)
+      faraday-excon (~> 1.1)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.1)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords (>= 0.0.4)
+    faraday-em_http (1.0.0)
+    faraday-em_synchrony (1.0.0)
+    faraday-excon (1.1.0)
+    faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.1.0)
+    faraday_middleware (1.0.0)
+      faraday (~> 1.0)
+    ffi (1.15.3)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
+    http (5.0.0)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      llhttp-ffi (~> 0.0.1)
+    http-cookie (1.0.4)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
+    llhttp-ffi (0.0.1)
+      ffi-compiler (~> 1.0)
+      rake (~> 13.0)
+    multipart-post (2.1.1)
+    oj (3.11.6)
+    public_suffix (4.0.6)
+    rake (13.0.3)
+    ruby2_keywords (0.0.4)
+    twitch_oauth2 (0.3.0)
+      faraday (~> 1.0)
+      faraday_middleware (~> 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.7)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  bigdecimal (= 1.4.2)
+  coinrpc
+  dotenv
+  twitch-api!
+  twitch-chat!
+
+BUNDLED WITH
+   2.2.20
