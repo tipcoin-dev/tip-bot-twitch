@@ -45,6 +45,15 @@ client = Twitch::Chat::Client.new(
     end
   end
 
+  # show help link
+  on :message do |message|
+    if message.text.include?("!!help")
+      account = message.user.id.to_s
+
+      send_message "@#{message.user.display_name} You can find a list of all Commands here https://github.com/tipcoin-dev/tip-bot-twitch/blob/main/README.md"
+    end
+  end
+
   # grab user deposit address
   on :message do |message|
     if message.text.include?("!!deposit")
