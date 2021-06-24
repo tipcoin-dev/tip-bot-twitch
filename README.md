@@ -9,13 +9,13 @@ Command prefix : `!!`
 
 |Command                         |Description                                  |Example                                            |
 |--------------------------------|---------------------------------------------|---------------------------------------------------|
-|`!!tipcoin`                        |Show information of Tipcoin.                 |                                                   |
+|`!!tipcoin`                     |Show information of Tipcoin.                 |                                                   |
 |`!!help`                        |Show help message.                           |                                                   |
 |`!!balance`                     |Show your balance.                           |                                                   |
 |`!!deposit`                     |Show your deposit address.                   |                                                   |
 |`!!tip (@mention) (amount)`     |Tip specified amount to specified user.      |`!!tip @acidtib 420`                               |
 |`!!withdraw (address) (amount)` |Send specified amount to specified address.  |`!!withdraw TpCZwFjbEYAKCh8za2fuPd9btCfMA9EzsF 10` |
-|`!!withdrawall (address)`       |Send your all balance to specified address. |`!!withdrawall TpCZwFjbEYAKCh8za2fuPd9btCfMA9EzsF`  |
+|`!!withdrawall (address)`       |Send your all balance to specified address.  |`!!withdrawall TpCZwFjbEYAKCh8za2fuPd9btCfMA9EzsF` |
 
 ### Tips
 
@@ -67,4 +67,10 @@ deprecatedrpc=accounts
 
 ```
 bundle exec ruby main.rb
+```
+
+or use Docker
+
+```
+docker compose run --build
 ```
