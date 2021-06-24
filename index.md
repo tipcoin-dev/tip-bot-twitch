@@ -1,37 +1,76 @@
-## Welcome to GitHub Pages
+Tipcoin Twitch Bot
+====
 
-You can use the [editor on GitHub](https://github.com/tipcoin-dev/tip-bot-twitch/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A twitch Tip-bot for Tipcoin
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Usage
 
-### Markdown
+Command prefix : `!!`
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+|Command                         |Description                                  |Example                                            |
+|--------------------------------|---------------------------------------------|---------------------------------------------------|
+|`!!tipcoin`                     |Show information of Tipcoin.                 |                                                   |
+|`!!help`                        |Show help message.                           |                                                   |
+|`!!balance`                     |Show your balance.                           |                                                   |
+|`!!deposit`                     |Show your deposit address.                   |                                                   |
+|`!!tip (@mention) (amount)`     |Tip specified amount to specified user.      |`!!tip @acidtib 420`                               |
+|`!!withdraw (address) (amount)` |Send specified amount to specified address.  |`!!withdraw TpCZwFjbEYAKCh8za2fuPd9btCfMA9EzsF 10` |
+|`!!withdrawall (address)`       |Send your all balance to specified address.  |`!!withdrawall TpCZwFjbEYAKCh8za2fuPd9btCfMA9EzsF` |
 
-```markdown
-Syntax highlighted code block
+### Tips
 
-# Header 1
-## Header 2
-### Header 3
+withdraw-fee is 0.001 TIP.
 
-- Bulleted
-- List
+Number of Confirmations is 6 blocks.
 
-1. Numbered
-2. List
+Address type is `segwit`.
 
-**Bold** and _Italic_ and `Code` text
+In `withdraw`, amount must be at least 0.5 TIP.
 
-[Link](url) and ![Image](src)
+You can donate by Tipcoin to the bot. (example : /tip @tipcoinbot 3.939)
+
+The address changes with each deposit, but you can use the previous one. However, it is recommended to use the latest address.
+
+## Requirement
+
+* Ruby
+* Tipcoin Core
+
+```
+bundle install
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## How to run
 
-### Jekyll Themes
+1. copy .env-example
+```
+cp .env-example .env
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tipcoin-dev/tip-bot-twitch/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+2. Edit configuration file of tipcoind (tipcoin.conf)
 
-### Support or Contact
+```
+rpcuser=username
+rpcpassword=password
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+rpcbind=127.0.0.1
+rpcallowip=127.0.0.1
+
+server=1
+daemon=1
+listen=1
+
+deprecatedrpc=accounts
+```
+
+3. Run `tip-bot-twitch`
+
+```
+bundle exec ruby main.rb
+```
+
+or use Docker
+
+```
+docker compose run --build
+```
