@@ -66,7 +66,7 @@ client = Twitch::Chat::Client.new(
     if message.text.include?("!!help")
       account = message.user.id.to_s
 
-      send_message "@#{message.user.display_name} You can find a list of all Commands here https://github.com/tipcoin-dev/tip-bot-twitch/blob/main/README.md"
+      send_message "@#{message.user.display_name} You can find a list of all Commands here https://tipcoin-dev.github.io/tip-bot-twitch/"
     end
   end
 
