@@ -52,6 +52,15 @@ client = Twitch::Chat::Client.new(
     end
   end
 
+  # show project link
+  on :message do |message|
+    if message.text.include?("!!tipcoin")
+      account = message.user.id.to_s
+
+      send_message "@#{message.user.display_name} checkout https://tipcoin.us"
+    end
+  end
+
   # show help link
   on :message do |message|
     if message.text.include?("!!help")
