@@ -231,7 +231,7 @@ client = Twitch::Chat::Client.new(
 
           tipClient.move(account, ADMIN, FEE)
 
-          send_message "@#{message.user.display_name} Withdrawal Complete: transaction id #{txid}"
+          send_message "@#{message.user.display_name} Withdrawal Complete"
         end
       end
 
@@ -293,7 +293,7 @@ client = Twitch::Chat::Client.new(
 
           tipClient.move(account, ADMIN, FEE)
 
-          send_message "@#{message.user.display_name} Withdrawal Complete: transaction id #{txid}"
+          send_message "@#{message.user.display_name} Withdrawal Complete"
         end
       end
 
