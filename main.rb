@@ -13,6 +13,12 @@ WITHDRAWMINIMUM = ENV["CONF_WITHDRAWMINIMUM"].to_f
 ADMIN = "211837672"
 BOTID = ENV["TWITCH_BOT_ID"]
 
+if ENV['DOCKER_LOGS']
+  LOG_OUTPUT = Logger.new("/var/log/bot.log")
+else
+  LOG_OUTPUT = Logger.new(STDOUT)
+end
+
 twitchClient = Twitch::Client.new(
   client_id: ENV["TWITCH_CLIENT_ID"],
   client_secret: ENV["TWITCH_CLIENT_SECRET"]
@@ -24,7 +30,8 @@ tipClient = CoinRPC::Client.new(ENV["RPC_URL"])
 client = Twitch::Chat::Client.new(
   channel: ENV["TWITCH_CHANNEL"], 
   nickname: ENV["TWITCH_NICKNAME"], 
-  password: ENV["TWITCH_PASSWORD"]
+  password: ENV["TWITCH_PASSWORD"],
+  logger: LOG_OUTPUT
 ) do
   # on :join do |channel|
   #   send_message "Hi #{channel}"
