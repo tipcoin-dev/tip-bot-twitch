@@ -18,6 +18,6 @@ jobs:
         image: tip-bot-twitch
         registry: ghcr.io
         githubOrg: tipcoin-dev
-        tag: latest
+        tags: latest
         username: ${{ secrets.GHCR_USERNAME }}
         password: ${{ secrets.GHCR_TOKEN }}
