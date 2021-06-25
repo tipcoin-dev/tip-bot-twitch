@@ -78,5 +78,5 @@ docker compose run --build
 or
 
 ```
-docker run -d --env-file ./.env --name twitch-envarg ghcr.io/tipcoin-dev/tip-bot-twitch:latest
+docker run -d --env-file ./.env --network=host --name twitch-bot ghcr.io/tipcoin-dev/tip-bot-twitch:latest
 ```
