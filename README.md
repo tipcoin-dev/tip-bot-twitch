@@ -78,5 +78,13 @@ docker compose run --build
 or
 
 ```
-docker run -d --env-file ./.env --network=host --name twitch-bot ghcr.io/tipcoin-dev/tip-bot-twitch:latest
+docker run -d --env-file ./.env --network host --restart unless-stopped --name twitch-bot ghcr.io/tipcoin-dev/tip-bot-twitch:latest
+```
+
+or deploy bot on multiple channels
+
+```
+docker run -d --env TWITCH_CHANNEL=envarg --env-file ./.env --network=host --name twitch-envarg ghcr.io/tipcoin-dev/tip-bot-twitch:latest
+
+docker run -d --env TWITCH_CHANNEL=acidtib --env-file ./.env --network=host --name twitch-acidtib ghcr.io/tipcoin-dev/tip-bot-twitch:latest
 ```
